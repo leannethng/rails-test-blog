@@ -12,14 +12,17 @@ class ArticlesController < ApplicationController
 
 
   def new
+    @article = Article.new
   end
-
 
   def create
     @article = Article.new(article_params)
 
-    @article.save
-    redirect_to @article
+    if @article.save
+      redirect_to @article  
+    else
+      render 'new'  
+    end  
 
     # When the submit button is clicked the page renders with the parameter key/values for each form field
     # render plain: params[:article].inspect
