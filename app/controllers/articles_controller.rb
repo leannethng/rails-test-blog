@@ -5,28 +5,37 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
 
-
   def show
     @article = Article.find(params[:id])
   end 
-
 
   def new
     @article = Article.new
   end
 
+  def edit 
+    @article = Article.find(params[:id])
+  end  
+
   def create
     @article = Article.new(article_params)
-
+   # if the save doesnt vaildated we render the form through 'new'
     if @article.save
       redirect_to @article  
     else
       render 'new'  
     end  
-
-    # When the submit button is clicked the page renders with the parameter key/values for each form field
-    # render plain: params[:article].inspect
   end
+
+  def update
+    @article = Article.find(params[:id])
+
+    if @article.update(article_params)
+      redirect_to @article
+    else
+      render 'edit'
+    end  
+  end  
 
   private
   # the method is often made private to make sure it can't be called outside its intended context. 
