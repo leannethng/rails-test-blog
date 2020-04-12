@@ -248,6 +248,7 @@ DEPENDENCIES
   pg
   puma (~> 4.1)
   rails (~> 6.0.2, >= 6.0.2.2)
+  rubocop
   sass-rails (>= 6)
   selenium-webdriver
   solargraph
