@@ -56,3 +56,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'htmlbeautifier', group: :development
 gem 'solargraph', group: :development
 gem 'rubocop', groups: [:development, :test]
+gem 'pry-byebug', group: :development

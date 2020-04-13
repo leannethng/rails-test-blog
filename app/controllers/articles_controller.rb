@@ -46,6 +46,7 @@ class ArticlesController < ApplicationController
   end
 
   private
+
   #  the method is often made private to make sure it can't be called
   # outside it's intended context.
   def article_params
