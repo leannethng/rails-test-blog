@@ -2,6 +2,8 @@ class ArticlesController < ApplicationController
   # $ rails routes, has predefined URI patterns such as
   # articles#new with you can define here to hook into.
 
+  http_basic_authenticate_with name: 'me', password: 'secret', except: [:index, :show]
+
   def index
     @articles = Article.all
   end
